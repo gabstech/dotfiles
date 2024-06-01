@@ -32,6 +32,11 @@ keys = [
     #print screen
     Key([], "Print", lazy.spawn("scrot -s /home/gabsaws/Pictures/Screenshots/%y-%m-%d--%H-%M-%S.png")),
 
+    #monitor switch
+     # Switch focus of monitors
+    Key([mod], "period", lazy.next_screen(), desc='Move focus to next monitor'),
+    Key([mod], "comma", lazy.prev_screen(), desc='Move focus to prev monitor'),
+
     # A list of available commands that can be bound to keys can be found
     # at https://docs.qtile.org/en/latest/manual/config/lazy.html
     # Switch between windows

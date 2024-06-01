@@ -53,6 +53,10 @@ PROMPT_COMMAND=generate_prompt
 eval "$(starship init bash)"
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 #turn off system beep in console
 xset b off
