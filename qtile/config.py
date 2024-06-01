@@ -8,10 +8,14 @@ import subprocess
 
 mod = "mod4"
 terminal = "kitty"
+browser = "brave"
 
 import colors
 
 keys = [
+    #apertura de aplicaciones
+    Key([mod], "q", lazy.spawn(browser)),
+
     #volume control
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")),
     Key([], "XF86AudioRaiseVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ +5%")),
