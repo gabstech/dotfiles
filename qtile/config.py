@@ -15,6 +15,7 @@ import colors
 keys = [
     #apertura de aplicaciones
     Key([mod], "q", lazy.spawn(browser)),
+    Key([mod], "i", lazy.widget["keyboardlayout"].next_keyboard(), desc="Next keyboard layout."),
 
     #volume control
     Key([], "XF86AudioLowerVolume", lazy.spawn("pactl set-sink-volume @DEFAULT_SINK@ -5%")),
@@ -208,6 +209,15 @@ screens = [
 
 
                 #PARTE DERECHA
+                widget.KeyboardLayout(
+                    configured_keyboards=['us', 'latam'],
+                    display_map={'us': ' US', 'latam': ' ES'},
+                    option='grp:alt_shift_toggle',
+                    fmt="{} ",
+                    foreground=colors[7],
+                    ),
+
+                widget.Spacer(length = reg_length),
                 widget.Wlan(
                     interface="wlp1s0",
                     ethernet_message=" ",
@@ -236,12 +246,12 @@ screens = [
                     full_char=" ",
                     charge_char=" ",
                     discharge_char ="  ",
-                    not_charging_char="",
-                    format= '{char}{percent:2.0%}  ',
+                    not_charging_char="   ",
+                    format= '{char}{percent:2.0%} ',
                     foreground=colors[8],
 
                     low_foreground=colors[5],
-                    low_percentage=0.19,
+                    low_percentage=0.20,
                 ),
                 widget.PulseVolume(
                     fmt="   {}",
