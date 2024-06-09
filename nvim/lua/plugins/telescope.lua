@@ -9,7 +9,7 @@ return {
     vim.keymap.set('n', '<C-j>', builtin.live_grep, {})
     vim.keymap.set('n', '<C-k>', function() builtin.live_grep({search_dirs={vim.fn.expand("%:p")}}) end, {})
 
-    vim.keymap.set('n', '<C-g>', builtin.git_files, {})
+    vim.keymap.set('n', '<C-i>', builtin.git_files, {})
   end
 }
 
