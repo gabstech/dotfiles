@@ -37,6 +37,17 @@ return {
 			lspconfig.clangd.setup({
 				capabilities = capabilities,
 			})
+      lspconfig.html.setup({
+				capabilities = capabilities,
+      })
+      lspconfig.cssls.setup({
+				capabilities = capabilities,
+      })
+      lspconfig.bashls.setup({
+				capabilities = capabilities,
+      })
+
+
 
 			--configuration of keybindings
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
