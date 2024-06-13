@@ -140,7 +140,7 @@ for vt in range(1, 8):
 
 
 widget_defaults = dict(
-    font="HackerNerdFont",
+    font="FreeSans",
     fontsize=15,
     padding=3,
 )
@@ -211,11 +211,15 @@ layouts = [
 
 ##MOUSE CALLBACKS
 def open_pacman(qtile):
-    qtile.cmd_spawn("kitty -e sudo pacman -Syu")
+    qtile.spawn("kitty -e sudo pacman -Syu")
 
 
 def open_bt(qtile):
-    qtile.cmd_spawn("blueman-manager")
+    qtile.spawn("blueman-manager")
+
+
+def open_wifi(qtile):
+    qtile.spawn("io.elementary.switchboard settings://network")
 
 
 reg_length = 5
@@ -257,7 +261,7 @@ screens = [
                     format="  ",
                     use_ethernet=True,
                     foreground=colors[7],
-                    mouse_callbacks={},
+                    mouse_callbacks={"Button1": lazy.function(open_wifi)},
                 ),
                 widget.Spacer(length=reg_length),
                 widget.Bluetooth(
