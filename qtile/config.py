@@ -205,7 +205,7 @@ layouts = [
         margin=3,
         border_radius=30,
     ),
-    layout.Matrix(**layout_theme),
+    layout.Max(),
 ]
 
 
